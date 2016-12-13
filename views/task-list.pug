@@ -1,0 +1,7 @@
+extends index
+
+block content
+  h1 New task
+  if error
+    h2= error
+  include ./task_form
