@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>subsequent-turtle</title>
-  </head>
-  <body>
-    <h1>subsequent-turtle to do list</h1>
-    <form method="post" action="/list">
-      <input type="text" name="task" placeholder="lol">
-      <button type="submit" name="button">submit</button>
-    </form>
-  </body>
-</html>
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title subsequent-turtle
+  body
+    h1 subsequent-turtle to do list
+    form(method='post', action='/list')
+      input(type='text', name='task', placeholder='lol')
+      button(type='submit', name='button') submit
+    div
+      each todo in results
+        li=todo.task
