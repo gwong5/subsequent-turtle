@@ -13,9 +13,14 @@
   </form>
   <br/>
   <div class="todoCollection">
-    <% for(var i=0; i<task.length; i++) {%>
+    <% for(var index=0; index<task.length; index++) {%>
       <div class="todo">
-        <div><input type='checkbox' id="check"></input><div id='taskSubmission' contentEditable="false"><%= task[i].task %></div><button id="edit">edit</button></div>
+        <div>
+          <input type='checkbox' id="check"></input>
+          <div id="taskSubmission<%= index %>"  contentEditable="false">
+            <button id="edit<%= index %>" onclick="renderItem(<%= index %>)">edit</button><%= task[index].task %>
+          </div>
+        </div>
       </div>
     <% } %>
   </div>

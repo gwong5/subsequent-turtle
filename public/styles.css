@@ -2,4 +2,9 @@
   width: 230px;
   display: inline-block;
   margin-left: 3px;
+  user-select: none;
 }
+
+/*#edit {
+  user-select: none;
+}*/
