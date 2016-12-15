@@ -10,5 +10,14 @@
   <input type="text" placeholder="Enter Task" name="task">
   <button type="submit">Submit</button>
   </form>
+
+  <ul class="todoCollection">
+    <% for(var i=0; i<task.length; i++) {%>
+      <li class="todo">
+        <span><%= task[i].task %></span>
+      </li>
+    <% } %>
+  </ul>
+
 </body>
 </html>
