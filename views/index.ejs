@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>subsequent-turtle</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <h1>subsequent-turtle todo list</h1>
@@ -10,14 +11,15 @@
   <input type="text" placeholder="Enter Task" name="task">
   <button type="submit">Submit</button>
   </form>
-
-  <ul class="todoCollection">
+  <br/>
+  <div class="todoCollection">
     <% for(var i=0; i<task.length; i++) {%>
-      <li class="todo">
-        <div><input type='checkbox' id="check"></input><%= task[i].task %><button id="edit">edit</button></div>
-      </li>
+      <div class="todo">
+        <div><input type='checkbox' id="check"></input><div id='taskSubmission' contentEditable="false"><%= task[i].task %></div><button id="edit">edit</button></div>
+      </div>
     <% } %>
-  </ul>
+  </div>
+  <br/>
   <button id='complete'>mark as complete</button><button id='delete'>delete</button>
   <script src="main.js"></script>
 
