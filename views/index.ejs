@@ -14,10 +14,12 @@
   <ul class="todoCollection">
     <% for(var i=0; i<task.length; i++) {%>
       <li class="todo">
-        <span><%= task[i].task %></span>
+        <div><input type='checkbox' id="check"></input><%= task[i].task %><button id="edit">edit</button></div>
       </li>
     <% } %>
   </ul>
+  <button id='complete'>mark as complete</button><button id='delete'>delete</button>
+  <script src="main.js"></script>
 
 </body>
 </html>

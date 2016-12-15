@@ -12,6 +12,8 @@ MongoClient.connect('mongodb://turtle:asdf@ds133378.mlab.com:33378/subsequent-tu
 })
 
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.static('public'))
+app.use(bodyParser.json())
 app.set('view engine', 'ejs')
 
 app.post('/todoList', (req, res) => {
@@ -26,5 +28,12 @@ app.get('/', (req, res) => {
   db.collection('todoCollection').find().toArray(function(err, result) {
     if (err) return console.log(err)
     res.render('index.ejs', {task: result})
+  })
+})
+
+app.put('/todoList', (req, res) => {
+  db.collection('todoList')
+  .findOneAndUpdate( {task: ''}, {
+
   })
 })
