@@ -17,9 +17,10 @@ app.use(bodyParser.json())
 app.set('view engine', 'ejs')
 
 app.post('/todoList', (req, res) => {
+  console.log(req.body)
+  req.body.status = 'not-completed'
   db.collection('todoCollection').save(req.body, (err, result) => {
     if (err) return console.log(err)
-    console.log('saved to database')
     res.redirect('/')
   })
 })
@@ -31,9 +32,13 @@ app.get('/', (req, res) => {
   })
 })
 
-app.put('/todoList', (req, res) => {
-  db.collection('todoList')
-  .findOneAndUpdate( {task: ''}, {
-
+app.put('/todoList/:id', (req, res) => {
+  console.log('rewritten', req.body)
+  db.collection('todoCollection').findOneAndUpdate({task:req.body.task}, {
+    $set: {
+      "task": req.body.task
+    }
   })
 })
+
+app.post('/')

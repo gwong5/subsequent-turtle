@@ -16,16 +16,22 @@
     <% for(var index=0; index<task.length; index++) {%>
       <div class="todo">
         <div>
-          <input type='checkbox' id="check"></input>
-          <div id="taskSubmission<%= index %>"  contentEditable="false">
-            <button id="edit<%= index %>" onclick="renderItem(<%= index %>)">edit</button><%= task[index].task %>
+          <input type='checkbox' id="check<%= index %>"></input>
+          <div id="taskSubmission<%= index %>" style= "display: inline-block"  contentEditable="false" action="rewrite" method="PUT">
+            <button id="edit<%= index %>" onclick="renderItem(<%= index %>)" >edit</button>
+
+            <% if (task[index].status == 'completed') { %>
+              <span class='completed'><%= task[index].task %></span>
+            <% } else { %>
+              <span><%= task[index].task %></span>
+            <% } %>
           </div>
         </div>
       </div>
     <% } %>
   </div>
   <br/>
-  <button id='complete'>mark as complete</button><button id='delete'>delete</button>
+  <button id='complete' onclick="renderItem(<%= index %>)">mark as complete</button><button id='delete'>delete</button>
   <script src="main.js"></script>
 
 </body>
