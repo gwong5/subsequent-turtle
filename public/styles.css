@@ -5,6 +5,10 @@
   user-select: none;
 }
 
-/*#edit {
+#edit {
   user-select: none;
-}*/
+}
+
+.completed {
+  text-decoration: line-through;
+}
