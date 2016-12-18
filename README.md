@@ -6,12 +6,12 @@ A to-do application built using Expressjs and Mongodb
 
 ##Specs
 
-- [X] Create a database of to-do items.- [X] users can create to-do items.
+- [X] create a backend using node and express
+- [X] users can create to-do items.
 - [X] users can update tasks.
 - [ ] users can delete tasks.
 - [ ] users can check items off as completed.
 - [ ] users can rearrange to-do list items.
-- [X] create a backend using node and express 
 - [X] Follow good Git team behaviors
 - [X] The artifact produced is properly licensed
 
