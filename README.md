@@ -8,7 +8,7 @@ A to-do application built using Expressjs and Mongodb
 
 - [X] users can create to-do items.
 - [X] users can update tasks.
-- [X] users can delete tasks.
+- [ ] users can delete tasks.
 - [ ] users can check items off as completed.
 - [ ] users can rearrange to-do list items.
 - [X] create a backend using node and express 
