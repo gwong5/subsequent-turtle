@@ -50,3 +50,19 @@ function renderItem(index) {
     // body: JSON.stringify({
     //   'name': 'Darth Vader'
     // })
+
+ function makeDeleteCall(e, id,taskItem) {
+  e.preventDefault();
+  console.log(taskItem);
+  // Make AJAX Call here to server to delete item with the ID
+  //After call to remote server you can then update the DOM to remove the item
+
+fetch('/removeListItem',{
+    method: 'delete',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      'task': taskItem
+    })
+    });
+  document.getElementById('taskSubmission'+id).remove();
+}
