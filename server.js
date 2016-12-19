@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const { MongoClient } = require('mongodb')
+const MongoClient  = require('mongodb')
 const app = express()
 const async = require('async')
 
@@ -68,6 +68,16 @@ function removeTask(task, done) {
   done();
 }
 
+
+
+app.delete('/removeListItem',function(req,res) {
+  task = req.body.task;
+  db.collection('todoCollection').remove({ task: task}, (err, result) => {
+    if (err) return console.log(err)
+    res.redirect('/')
+  });
+
+});
 
 app.put('/removeTodoLists', (req, res) => {
   async.forEach(req.body, removeTask, function(err) {
